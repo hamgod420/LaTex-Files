@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath} 
+\usepackage{gensymb}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+ 
+\title{Vectors Project Solutions}
+\author{Andy Yan and Harry Zhang}
+\date{June 2022}
+
+\begin{document}
+
+\maketitle
+
+8. The points \textit{P} and \textit{Q} have position vectors \begin{pmatrix}1 \\ 2 \\ 3 \end{pmatrix} and \begin{pmatrix}3 \\ 3 \\ 5 \end{pmatrix} respectively, referred to the origin \textit{O}.
+
+		
+\begin{enumerate}[a)] %   a),     b),     c), ...
+\setlength{\itemindent}{3em}
+\item  Find the position vector of the point where line \textit{PQ} meets the plane \textit{z} = 0.\\ \\
+First we must determine the direction vector of line \textit{PQ}. We can do so by finding the difference between position vectors \(\overrightarrow{OQ}\) and \(\overrightarrow{OP}\):
+$$\overrightarrow{PQ} = \overrightarrow{OQ} - \overrightarrow{OP}$$
+$$\overrightarrow{PQ} = \begin{pmatrix}3 \\ 3  \\ 5  \end{pmatrix} - \begin{pmatrix}1 \\ 2  \\ 3  \end{pmatrix} = \begin{pmatrix}2 \\ 1 \\ 2 \end{pmatrix}$$
+Then we can use \(\overrightarrow{PQ}\) as the direction vector for our line \(\ell\) and point \textit{P} as our position vector:
+$$\ell : \vec{r} = \begin{pmatrix}1 \\ 2  \\ 3  \end{pmatrix} + \lambda\begin{pmatrix}2 \\ 1 \\ 2 \end{pmatrix}, \lambda \in \mathbb{R}$$Now to solve for the point where \(\ell\) meets the plane \textit{z} = 0, we can convert our line equation into parametric form and substitute 0 for the \textit{z} coordinate and solve the system of equations: 
+\begin{enumerate}[ ]
+\item $$\textit{x} = 1 + 2\lambda$$
+\item $$\textit{y} = 2 + \lambda$$
+\item $$0 = 3 + 2\lambda$$
+
+\end{enumerate}
+We can first solve for \(\lambda\) using the last equation since there is only one unknown. And we find that \(\lambda\) = -\(\frac{3}{2}\). Now given \(\lambda\), we can easily determine the values of \textit{x} and \textit{y} by substituting \(\lambda\) in. 
+$$\textit{x} = 1 + 2(-\frac{3}{2}) = -2$$
+ $$\textit{y} = 2 + 1(-\frac{3}{2}) = \frac{1}{2}$$
+ Now we have the \textit{x}, \textit{y}, \textit{z} coordinates of the position vector where \(\ell\) meets the plane when \textit{z} = 0. \\\textbf{The answer to a) is }\(\begin{pmatrix}-2 \\ \frac{1}{2} \\ 0 \end{pmatrix}\). \\
+\item  Find the equation of the plane through \textit{P} normal to \textit{PQ}. 
+\\ \\
+Let \(\pi\) be the equation of this plane. With the given information, the scalar product equation of \(\pi\) is:
+$$\pi : \vec{r} \cdot \vec{n} = \begin{pmatrix}1 \\ 2 \\ 3 \end{pmatrix} \cdot \vec{n}$$
+To complete the equation, we have to find the normal vector of the plane. However, we are already given the direction vector of \(\ell\) and if \(\pi\) is normal to \(\ell\), the direction vector of \(\ell\) will also be normal to the plane \(\pi\). Hence,
+$$\overrightarrow{PQ} = \vec{n} = \begin{pmatrix}2 \\ 1  \\ 2  \end{pmatrix}$$The equation of \(\pi\) becomes:
+$$\pi : \vec{r} \cdot \begin{pmatrix}2 \\ 1  \\ 2  \end{pmatrix} = \begin{pmatrix}1 \\ 2  \\ 3  \end{pmatrix} \cdot \begin{pmatrix}2 \\ 1  \\ 2  \end{pmatrix} = 10$$
+
+\textbf{The answer to b) is} \(\vec{r} \cdot \begin{pmatrix}2 \\ 1  \\ 2  \end{pmatrix} = 10\) .
+\item  Find the angle \textit{OPQ}, giving your answer to the nearest 0.1\(\degree\).
+\\ \\
+Let the angle OPQ  be \(\theta\). From the property of vectors we know that \(\theta\) is defined as the angle between the two heads or two tails of two vectors. To match this criteria we will use two vectors  \(\overrightarrow{PO}\) and \(\overrightarrow{PQ}\):
+$$\overrightarrow{PQ} = \begin{pmatrix}2 \\ 1  \\ 2 \end{pmatrix}, \overrightarrow{PO} = -\overrightarrow{OP} = -1\begin{pmatrix}1 \\ 2  \\ 3  \end{pmatrix} = \begin{pmatrix}-1 \\ -2  \\ -3 \end{pmatrix}  $$To find the angle \(\theta\), we can use dot product. From the definition of dot product we know that \(\overrightarrow{PO} \cdot \overrightarrow{PQ} = |\overrightarrow{PO}||\overrightarrow{PQ}|cos\theta\) \{\(0\degree \leq \theta\leq 180\degree\)\} where \(\theta\) is the angle between  \(\overrightarrow{PO}\) and \(\overrightarrow{PQ}\). To solve for \(\theta\), we just need to plug in the vectors and isolate for \(\theta\):
+$$cos\theta\ = \frac{\overrightarrow{PO} \cdot \overrightarrow{PQ}}{|\overrightarrow{PO}||\overrightarrow{PQ}|} = \frac{\begin{pmatrix}-1 \\ -2  \\ -3 \end{pmatrix} \cdot \begin{pmatrix}2 \\ 1  \\ 2 \end{pmatrix}}{\Bigg|\begin{pmatrix}-1 \\ -2  \\ -3 \end{pmatrix}\Bigg|\Bigg|\begin{pmatrix}2 \\ 1  \\ 2 \end{pmatrix}\Bigg|} = \frac{-10}{3\sqrt{14}}$$
+Use inverse cosine function, \(\theta = arccos\Big(\frac{-10}{3\sqrt{14}}\Big) \approx 153.0\degree\)
+\\\textbf{The answer to c) is }153.0\degree. 
+\item Find the values of a, b, and c such that the equation of the plane \textit{OPQ} is \(\vec{r}\) \(\cdot \begin{pmatrix}1 \\ a \\ b \end{pmatrix} = c\).
+\\ \\
+We know that points \textit{O}, \textit{P}, and \textit{Q} lie the plane \textit{OPQ}, that also means that vectors \(\overrightarrow{OP}\) and \(\overrightarrow{OQ}\) which are just position vectors, lie on the plane and they span the plane. To find the normal vector of the plane, we need to find a vector that is perpendicular to both \(\overrightarrow{OP}\) and \(\overrightarrow{OQ}\). We can use the cross product of the two vectors as it provides us with a vector that is perpendicular to both, meaning it is also perpendicular to the plane.
+$$\vec{n} = \begin{pmatrix}1 \\ a \\ b \end{pmatrix} =\begin{pmatrix}1 \\ 2 \\ 3 \end{pmatrix} \times \begin{pmatrix}3 \\ 3 \\ 5 \end{pmatrix} = \begin{pmatrix}1 \\ 4 \\ -3 \end{pmatrix}$$This provides us \textit{a} = 4 and \textit{b} = -3. To find \textit{c} we could plug in any vector on the plane and solve for \textit{c}, but we don't need to. Since the plane \textit{OPQ} contains the point origin \textit{O}, the scalar product will always be 0, hence \textit{c} = 0.
+\\
+\textbf{The answer to d) is} \{\textit{a} = 4, {b} = -3, {c} = 0\}.
+
+
+\end{enumerate}
+
+
+
+\end{document}
+
