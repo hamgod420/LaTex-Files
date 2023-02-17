@@ -1,0 +1,249 @@
+% T I T L E   P A G E
+% -------------------
+% Last updated August 16, 2022, by IST-Client Services
+% The title page is counted as page `i' but we need to suppress the
+% page number. Also, we don't want any headers or footers.
+\pagestyle{empty}
+\pagenumbering{roman}
+
+% The contents of the title page are specified in the "titlepage"
+% environment.
+\begin{titlepage}
+        \begin{center}
+        \vspace*{1.0cm}
+
+        \Huge
+        {\bf Two Variable Analysis between Height and Heart Rate  }
+
+        \vspace*{1.0cm}
+
+        \normalsize
+        by \\
+
+        \vspace*{1.0cm}
+
+        \Large
+        Andy Yan and Alexandru Darie \\
+
+        \vspace*{3.0cm}
+
+        \normalsize
+        A thesis \\
+        presented to Mr. Wang \\ 
+        in fulfillment of the \\
+        culminating project for \\
+        the completion of the Data Management Course\\
+        at A.Y Jackson Secondary School\\
+
+        \vspace*{2.0cm}
+
+       North York, Ontario, Canada, 2022 \\
+
+        \vspace*{1.0cm}
+
+        \copyright\ Andy Yan and Alexandru Darie 2022 \\
+        \end{center}
+\end{titlepage}
+
+% The rest of the front pages should contain no headers and be numbered using Roman numerals starting with `ii'
+\pagestyle{plain}
+\setcounter{page}{2}
+
+\cleardoublepage % Ends the current page and causes all figures and tables that have so far appeared in the input to be printed.
+% In a two-sided printing style, it also makes the next page a right-hand (odd-numbered) page, producing a blank page if necessary.
+\phantomsection    % allows hyperref to link to the correct page
+% D E C L A R A T I O N   P A G E
+% -------------------------------
+  % The following is a sample Declaration Page as provided by the GSO
+  % December 13th, 2006.  It is designed for an electronic thesis.
+ \addcontentsline{toc}{chapter}{Author's Declaration}
+ \begin{center}\textbf{Author's Declaration}\end{center}
+  
+ \noindent
+We hereby declare that we are the sole authors of this thesis. This is a true copy of the thesis, including any required final revisions, as accepted by our examiners. 
+
+  \bigskip
+  
+  \noindent
+We understand that our thesis may be made electronically available to the public.
+
+\cleardoublepage
+\phantomsection    % allows hyperref to link to the correct page
+
+% A B S T R A C T
+% ---------------
+\addcontentsline{toc}{chapter}{Abstract}
+\begin{center}\textbf{Abstract}\end{center}
+
+Height and heart rate are two variables that play a significant role in the health industry. Comparing the two can provide useful information that can improve the products used in the industry and our daily lives. This data can also bring helpful contributions to the sports and athletics industry.
+
+Throughout this report, there will be tables and graphs of conducted surveys used to collect the heights and heart rates of 50 male 17-year-old boys and 50 female 17-year-old girls. Using this data, we were able to come up with mathematical relationships that link our data and prove our hypothesis of the assumed relationship.
+
+\cleardoublepage
+\phantomsection    % allows hyperref to link to the correct page
+
+% A C K N O W L E D G E M E N T S
+% -------------------------------
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\begin{center}\textbf{Acknowledgements}\end{center}
+
+We would like to thank Overleaf for allowing us to create this beautiful document.
+\cleardoublepage
+\phantomsection    % allows hyperref to link to the correct page
+
+% T A B L E   O F   C O N T E N T S
+% ---------------------------------
+\renewcommand\contentsname{Table of Contents}
+\tableofcontents
+\cleardoublepage
+\phantomsection    % allows hyperref to link to the correct page
+
+% L I S T   O F   F I G U R E S
+% -----------------------------
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+
+
+
+\cleardoublepage
+\phantomsection		% allows hyperref to link to the correct page
+
+% L I S T   O F   T A B L E S
+% ---------------------------
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+
+
+
+\cleardoublepage
+\phantomsection		% allows hyperref to link to the correct page
+
+% C A L C U L A T I O N S
+% ---------------------------
+\addcontentsline{toc}{chapter}{Calculations}
+
+{\huge \textbf{Calculations}}
+
+\vspace*{1.0cm}
+
+{\large Calculating the \textbf{Average} of the Data (males):}
+\begin{equation}
+\mu = 
+\frac{
+  \displaystyle\sum\limits_{k=1}^{50} x_{k}
+}{50} = 81.44  , \hspace{0.5cm}
+\fbox{\mu = 81.44} \label{1} 
+\end{equation} 
+
+{\large Calculating the \textbf{Standard Deviation} of the Data (males):}
+\begin{equation}
+\sigma = 
+\sqrt{\frac{
+  \displaystyle\sum\limits_{k=1}^{N} (x_{k} - \mu)^2
+}{N-1}} = 
+\sqrt{\frac{
+  \displaystyle\sum\limits_{k=1}^{50} (x_{k} - 81.44)^2
+}{49}} \approx 7.7648  , \hspace{0.5cm}
+\fbox{\sigma = 7.7648} \label{2}
+\end{equation} 
+
+{\large Calculating the \textbf{Variance} of the Data (males):}
+\begin{equation}
+\sigma^2 = 7.7648^2 \approx 60.2921  , \hspace{0.5cm}
+\fbox{\sigma^2 = 60.2921} \label{3}
+\end{equation} 
+
+{\large Calculating the \textbf{Pearson's R} of the Data (males):}
+\begin{equation}
+r = \frac{n\displaystyle\sum\limits_{i=1}^{50}x_i y_i - (\displaystyle\sum\limits_{i=1}^{50} x_i)(\displaystyle\sum\limits_{i=1}^{50}y_i)}
+{\sqrt{[(n\displaystyle\sum\limits_{i=1}^{50}x_i^2) - (\displaystyle\sum\limits_{i=1}^{50}x_i)^2][(n\displaystyle\sum\limits_{i=1}^{50}y_i^2) - (\displaystyle\sum\limits_{i=1}^{50}y_i)^2]}} = 
+\frac{2261.48}{\sqrt{(4253.22)(2954.32)}} = 0.638 \label{4}
+\end{equation} 
+\begin{equation}
+\therefore \fbox{r = 0.638} \label{5}
+\end{equation} 
+
+\cleardoublepage
+
+{\large Calculating the \textbf{Line of Best Fit} for the Data (males):}
+\begin{equation}
+a = \frac{n\displaystyle\sum\limits_{i=1}^{50}x_i y_i - (\displaystyle\sum\limits_{i=1}^{50} x_i)(\displaystyle\sum\limits_{i=1}^{50}y_i)}
+{n(\displaystyle\sum\limits_{i=1}^{50}x_i^2) - (\displaystyle\sum\limits_{i=1}^{50}x_i)^2} = 
+\frac{2261.48}{4253.22} \approx 0.5317 , \hspace{0.5cm} \therefore a = 0.5317 \label{6}
+\end{equation} 
+\begin{equation}
+b = \overline{y} - a\overline{x} = 81.44 - 0.5317\cdot177.66 \approx -13.0236 , \hspace{0.5cm}              
+ \therefore b = -13.0236 \label{7}
+ \vspace{0.5cm}
+\end{equation} 
+\hspace{0.5cm} Therefore the Equation of the line of best fit is:
+\begin{equation}
+\fbox{y = 0.5317x - 13.0236} \label{8}
+\end{equation}
+\vspace{0.7cm}
+\hline
+\vspace{0.7cm}
+ 
+%---------------------------------------------------------------------------------
+
+{\large Calculating the \textbf{Average} of the Data (females):}
+\begin{equation}
+\mu = 
+\frac{
+  \displaystyle\sum\limits_{k=1}^{50} x_{k}
+}{50} = 89.32  , \hspace{0.5cm}
+\fbox{\mu = 89.32} \label{9}
+\end{equation} 
+
+{\large Calculating the \textbf{Standard Deviation} of the Data (females):}
+\begin{equation}
+\sigma = 
+\sqrt{\frac{
+  \displaystyle\sum\limits_{k=1}^{N} (x_{k} - \mu)^2
+}{N-1}} = 
+\sqrt{\frac{
+  \displaystyle\sum\limits_{k=1}^{50} (x_{k} - 89.32)^2
+}{49}} \approx 7.8101  , \hspace{0.5cm}
+\fbox{\sigma = 7.8101} \label{10}
+\end{equation} 
+
+{\large Calculating the \textbf{Variance} of the Data (females):}
+\begin{equation}
+\sigma^2 = 7.8101^2 \approx 60.9977  , \hspace{0.5cm}
+\fbox{\sigma^2 = 60.9977} \label{11}
+\end{equation} 
+
+{\large Calculating the \textbf{Pearson's R} of the Data (females):}
+\begin{equation}
+r = \frac{n\displaystyle\sum\limits_{i=1}^{50}x_i y_i - (\displaystyle\sum\limits_{i=1}^{50} x_i)(\displaystyle\sum\limits_{i=1}^{50}y_i)}
+{\sqrt{[(n\displaystyle\sum\limits_{i=1}^{50}x_i^2) - (\displaystyle\sum\limits_{i=1}^{50}x_i)^2][(n\displaystyle\sum\limits_{i=1}^{50}y_i^2) - (\displaystyle\sum\limits_{i=1}^{50}y_i)^2]}} = 
+\frac{1618.08}{\sqrt{(2233.78)(2988.88)}} = 0.6262 \label{12}
+\end{equation} 
+\begin{equation}
+\therefore \fbox{r = 0.6262} \label{13}
+\end{equation} 
+\vspace{0.7cm}
+
+{\large Calculating the \textbf{Line of Best Fit} for the Data (females):}
+\begin{equation}
+a = \frac{n\displaystyle\sum\limits_{i=1}^{50}x_i y_i - (\displaystyle\sum\limits_{i=1}^{50} x_i)(\displaystyle\sum\limits_{i=1}^{50}y_i)}
+{n(\displaystyle\sum\limits_{i=1}^{50}x_i^2) - (\displaystyle\sum\limits_{i=1}^{50}x_i)^2} = 
+\frac{1618.08}{2233.78} \approx 0.7244 , \hspace{0.5cm} \therefore a = 0.7244 \label{14}
+\end{equation} 
+\begin{equation}
+b = \overline{y} - a\overline{x} = 89.32 - 0.7244\cdot169.62 \approx -33.5474 , \hspace{0.5cm}              
+ \therefore b = -33.5474 \label{15}
+ \vspace{0.5cm}
+\end{equation} 
+Therefore the Equation of the line of best fit is:
+\begin{equation}
+\fbox{y = 0.7244x - 33.5474} \label{16}
+\end{equation}
+
+\cleardoublepage
+
+\phantomsection		% allows hyperref to link to the correct page
+
+% Change page numbering back to Arabic numerals
+\pagenumbering{arabic}
+

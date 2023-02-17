@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgfplots}
+\usepackage[utf8]{inputenc}
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath} 
+\usepackage{gensymb}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=1.7}
+\usepackage{tikz}
+\geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+}
+\title{Practice Assignment: Combination with Identical
+Elements}
+\author{Andy Yan}
+\date{October 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{Question}
+How many different sums of money can be
+formed from one \$2 bill, three \$5 bills, two
+\$10 bills, and one \$20 bill?
+
+\section{Approach}
+To find the number of distinct ways we can pick from the bills is simple. We can group the bills accordingly to their value.
+\[\{(\$2),(\$5, \$5, \$5),(\$10, \$10),(\$20)\}\]
+To find the total number of distinct possible picks we, multiply the number of ways to pick from each type of bill. For example, there are 2 ways to pick the \$2 bill, either don't pick it or pick it. Another example is there are 4 ways to pick the \$5 bill, no pick, 1 bill, 2 bills, or 3 bills. So we find the number of ways to pick the other bills and multiply them.
+\[2\cdot4\cdot3\cdot2 = 48 \textbf{ distinct ways}\]
+To summarize this formula, we can let \(n_i\) represent the total numbers in a subset and add 1 to include the option of no selection.
+\[(n_1 + 1)(n_2 + 1)...(n_i + 1)...\]
+
+\section{Solution}
+
+However, 48 distinct ways to pick from the bills don't give us 48\textbf{ distinct sums}. For example, picking \(\{\$10,\$10\}\) gives us the same sum as picking \(\{\$20\}\). To solve this problem, we can combine the excess \$5 bills and \$10 bill into a \$20 bill \(\$5 + \$5 + \$10 = \$20\). By doing this, we eliminate the possibility of the smaller bills creating duplicate values since the sum of 2,5,10 is smaller than 20. Our new set looks like this:
+\[\{(\$2),(\$5),(\$10),(\$20, \$20)\}\]
+Now we can apply the formula, however, we have to subtract 1 to avoid the null set case (\$0 sum):
+\[(1 + 1)(1 + 1)(1 + 1)(2 + 1) - 1 = 2\cdot2\cdot2\cdot3 - 1 = 24 - 1 = 23 \textbf{ distinct sums}\]
+Therefore, there are \textbf{23 different sums of money} formed from one \$2 bill, three \$5 bills, two
+\$10 bills, and one \$20 bill?
+
+\end{document}

@@ -1,0 +1,140 @@
+    \documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgfplots}
+\usepackage[utf8]{inputenc}
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath} 
+\usepackage{gensymb}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage[linguistics]{forest}
+\pgfplotsset{compat=1.7}
+\usepackage{tikz}
+\geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+}
+\title{Practice Assignment}
+\author{Andy Yan}
+\date{October 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{Question}
+How many ways can you scramble all the letters in \textbf{GOOOSE}, such that \textbf{G} is always together with \textbf{O}, and \textbf{S} is never together with \textbf{E}? 
+
+\section{Requirements}
+\begin{enumerate}
+\item Sketch a tree of counting plan. [3K]
+\item Check your tree diagram to see if you have counted some possibilities more than once.
+\item Provide an algebraic solution based on your counting plan. That is, multiply all numbers on a single branch to get the branch number, and then add up all the branch numbers. [4A]
+\item As verification, list all possible scrambles in an organized way based on your counting plan. [3K] 
+\end{enumerate}
+
+\section{Counting Plan Tree}
+We start with our most repeated letter \textbf{O}, then we insert \textbf{G} so we don't break the rules, and then we insert S so when we are counting we know where \textbf{E} can go. All scrambles are reversible starting from the second layer.
+\begin{center}
+\begin{forest}
+    [OOO
+        [GOOO
+            [SGOOO]
+            [GOSOO]
+            [GOOSO]
+            [GOOOS]
+        ]
+        [OGOO
+            [SOGOO]
+            [OSGOO]
+            [OGSOO]
+            [OGOSO]
+            [OGOOS]
+        ]
+    ]
+\end{forest}
+\end{center}
+
+\section{Solution 1}
+From our counting plan, we are given all the scrambles (reversible) that don't contain \textbf{E}. We notice that all the scrambles that contain \textbf{G} in the first slot allow 3 possible slots for \textbf{E}. We also can see that if \textbf{G} and \textbf{S} are together there are only 3 possible slots for \textbf{E}. And for the rest of the cases where \textbf{G} and \textbf{S} are separated, there are only 4 possible slots for \textbf{E}. We also know that all of these scrambles are reversible.
+\[\# of Scrambles = 2 \cdot (4 \cdot 3 + 2 \cdot 3 + 3 \cdot 4) = 2 \cdot 30 = 60\textbf{ Scrambles}\]
+\section{Solution 2}
+Without using our counting plan, we can solve using combinatorics. First we can group \textbf{G} and \textbf{O} together into one letter \textbf{GO} leaving us with 5 letters to work with. \\Our total scrambles is \(2 \cdot 5!\) since we can swap \textbf{G} and \textbf{O}. However, we must take into count that we can't have \textbf{S} and \textbf{E} next to each other. The number of ways \textbf{S} and \textbf{E} can be next to each other is \(2 \cdot \frac{5!}{2!}\). Now finally we have to divide everything by 2! because we have 3 of the same letter \textbf{O} and only two are identical since one is grouped with \textbf{O}. So our final formula is:
+\[\frac{2 \cdot 5! - 2 \cdot \frac{5!}{2!}}{2!} = 60 \textbf{ Scrambles}\]
+
+
+\section{List of Solutions}
+\begin{center}
+\def\arraystretch{1}
+{\setlength{\tabcolsep}{2em}
+\begin{tabular}{| c |} 
+ \hline
+egooos\\ 
+egooso\\ 
+egosoo\\ 
+eogoos\\ 
+eogoso\\ 
+eogsoo\\ 
+eoogos\\ 
+eoogso\\ 
+eooogs\\ 
+eoosgo\\ 
+eoosog\\ 
+eosgoo\\ 
+eosogo\\ 
+eosoog\\ 
+goeoos\\ 
+goeoso\\ 
+gooeos\\ 
+goosoe\\ 
+gosoeo\\ 
+gosooe\\ 
+oegoos\\ 
+oegoso\\ 
+oeogos\\ 
+oeogso\\ 
+oeoogs\\ 
+oeosgo\\ 
+oeosog\\ 
+ogeoos\\ 
+ogeoso\\ 
+ogoeos\\ 
+ogosoe\\ 
+ogsoeo\\ 
+ogsooe\\ 
+ooegos\\ 
+ooeogs\\ 
+oogeos\\ 
+oogsoe\\ 
+oosgoe\\ 
+oosoge\\ 
+osgoeo\\ 
+osgooe\\ 
+osoego\\ 
+osoeog\\ 
+osogeo\\ 
+osogoe\\ 
+osooge\\ 
+sgoeoo\\ 
+sgooeo\\ 
+sgoooe\\ 
+soegoo\\ 
+soeogo\\ 
+soeoog\\ 
+sogeoo\\ 
+sogoeo\\ 
+sogooe\\ 
+sooego\\ 
+sooeog\\ 
+soogeo\\ 
+soogoe\\ 
+soooge\\
+  \hline
+\end{tabular}}
+\end{center}
+\end{document}
